@@ -1,5 +1,5 @@
 import { NavLink } from "./NavLink";
-import { LayoutDashboard, Package, Plus } from "lucide-react";
+import { LayoutDashboard, Package, Plus, Leaf } from "lucide-react";
 
 const Navigation = () => {
   return (
@@ -12,7 +12,7 @@ const Navigation = () => {
                 <Package className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">FSAE Tools</h1>
+                <h1 className="text-xl font-bold text-foreground">SAE Inventory</h1>
                 <p className="text-xs text-muted-foreground">Gestão de Estoque</p>
               </div>
             </div>
@@ -50,6 +50,17 @@ const Navigation = () => {
                   Adicionar Item
                 </div>
               </NavLink>
+              
+              <NavLink
+                to="/seja-green"
+                className="px-4 py-2 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+                activeClassName="bg-secondary text-secondary-foreground"
+              >
+                <div className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4" />
+                  Seja Green
+                </div>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -57,5 +68,3 @@ const Navigation = () => {
     </nav>
   );
 };
-
-export default Navigation;
