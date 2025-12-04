@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Search, Filter, Calendar, Package as PackageIcon } from "lucide-react";
+import { Search, Filter, Calendar, Package as PackageIcon, Pencil } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import { Badge } from "@/components/ui/badge";
 
@@ -136,6 +136,7 @@ const Inventory = () => {
                     <TableHead>Data de Validade</TableHead>
                     <TableHead>Data de Aquisição</TableHead>
                     <TableHead className="text-center">Status</TableHead>
+                    <TableHead className="text-center">Ações</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -164,6 +165,16 @@ const Inventory = () => {
                         <Badge className={getStatusColor(item.status)}>
                           {getStatusText(item.status)}
                         </Badge>
+                      </TableCell>
+                      <TableCell className="text-center">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="h-8 w-8 text-muted-foreground hover:text-primary"
+                          onClick={() => console.log("Editar item:", item.id)}
+                        >
+                          <Pencil className="h-4 w-4" />
+                        </Button>
                       </TableCell>
                     </TableRow>
                   ))}
