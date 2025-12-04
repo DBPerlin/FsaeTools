@@ -66,7 +66,7 @@ const SejaGreen = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-foreground">Seja Green</h1>
-              <p className="text-muted-foreground">Descarte consciente, ganhe recompensas</p>
+              <p className="text-muted-foreground">A Greenware Creations te convida, descarte consciente, ganhe recompensas</p>
             </div>
           </div>
         </div>

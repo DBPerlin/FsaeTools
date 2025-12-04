@@ -27,11 +27,11 @@ const Inventory = () => {
   const mockItems: InventoryItem[] = [
     { id: 1, name: "Pneus Hoosier R25B", category: "Mecânica", quantity: 12, expiryDate: "2025-12-31", acquisitionDate: "2024-01-15", status: "ok" },
     { id: 2, name: "ECU MoTeC M150", category: "Eletrônica", quantity: 2, expiryDate: "2026-06-30", acquisitionDate: "2024-03-20", status: "ok" },
-    { id: 3, name: "Freios AP Racing", category: "Freios", quantity: 4, expiryDate: "2025-08-15", acquisitionDate: "2024-02-10", status: "low" },
-    { id: 4, name: "Asa Dianteira Carbono", category: "Aerodinâmica", quantity: 1, expiryDate: "2027-01-01", acquisitionDate: "2024-05-05", status: "critical" },
+    { id: 3, name: "Freios AP Racing", category: "Freios", quantity: 4, expiryDate: "2025-12-23", acquisitionDate: "2024-02-10", status: "low" },
+    { id: 4, name: "Asa Dianteira Carbono", category: "Aerodinâmica", quantity: 1, expiryDate: "2025-12-18", acquisitionDate: "2024-05-05", status: "critical" },
     { id: 5, name: "Amortecedores Öhlins", category: "Suspensão", quantity: 8, expiryDate: "2026-03-30", acquisitionDate: "2024-04-12", status: "ok" },
     { id: 6, name: "Sensores de Temperatura", category: "Eletrônica", quantity: 15, expiryDate: "2025-11-20", acquisitionDate: "2024-01-28", status: "ok" },
-    { id: 7, name: "Corrente de Transmissão", category: "Mecânica", quantity: 3, expiryDate: "2025-09-10", acquisitionDate: "2024-03-15", status: "low" },
+    { id: 7, name: "Corrente de Transmissão", category: "Mecânica", quantity: 3, expiryDate: "2025-12-21", acquisitionDate: "2024-03-15", status: "low" },
     { id: 8, name: "Discos de Freio", category: "Freios", quantity: 6, expiryDate: "2025-07-25", acquisitionDate: "2024-02-20", status: "ok" },
   ];
 
@@ -54,7 +54,7 @@ const Inventory = () => {
   const getStatusText = (status: string) => {
     switch (status) {
       case "ok": return "OK";
-      case "low": return "Baixo";
+      case "low": return "Alerta";
       case "critical": return "Crítico";
       default: return "";
     }

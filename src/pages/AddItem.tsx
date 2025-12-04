@@ -22,7 +22,7 @@ const AddItem = () => {
     acquisitionDate: "",
     description: "",
     supplier: "",
-    location: "",
+    price: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -52,7 +52,7 @@ const AddItem = () => {
       acquisitionDate: "",
       description: "",
       supplier: "",
-      location: "",
+      price: "",
     });
 
     // Redireciona para o inventário após 1 segundo
@@ -158,12 +158,15 @@ const AddItem = () => {
                   </div>
 
                   <div className="space-y-2 md:col-span-2">
-                    <Label htmlFor="location">Localização</Label>
+                    <Label htmlFor="price">Preço</Label>
                     <Input
-                      id="location"
-                      placeholder="Ex: Prateleira A3, Box 2"
-                      value={formData.location}
-                      onChange={(e) => handleChange("location", e.target.value)}
+                      id="price"
+                      type="number"
+                      placeholder="Ex: 10"
+                      value={formData.price}
+                      onChange={(e) => handleChange("price", e.target.value)}
+                      min="1"
+                      required
                     />
                   </div>
 

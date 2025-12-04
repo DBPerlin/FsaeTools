@@ -6,20 +6,20 @@ import Navigation from "@/components/Navigation";
 const Dashboard = () => {
   // Dados mockados para os gráficos
   const categoryData = [
-    { name: "Mecânica", value: 45 },
-    { name: "Eletrônica", value: 32 },
-    { name: "Aerodinâmica", value: 28 },
-    { name: "Freios", value: 19 },
-    { name: "Suspensão", value: 24 },
+    { name: "Mecânica", value: 15 },
+    { name: "Eletrônica", value: 17 },
+    { name: "Aerodinâmica", value: 1 },
+    { name: "Freios", value: 10 },
+    { name: "Suspensão", value: 8 },
   ];
 
   const stockTrend = [
-    { month: "Jan", items: 120 },
-    { month: "Fev", items: 132 },
-    { month: "Mar", items: 141 },
-    { month: "Abr", items: 148 },
-    { month: "Mai", items: 145 },
-    { month: "Jun", items: 152 },
+    { month: "Jul", items: 20 },
+    { month: "Ago", items: 24 },
+    { month: "Set", items: 36 },
+    { month: "Out", items: 46 },
+    { month: "Nov", items: 48 },
+    { month: "Dez", items: 51 },
   ];
 
   const COLORS = ["hsl(142 76% 36%)", "hsl(142 76% 46%)", "hsl(142 50% 56%)", "hsl(142 40% 66%)", "hsl(142 30% 76%)"];
@@ -27,28 +27,28 @@ const Dashboard = () => {
   const stats = [
     {
       title: "Total de Itens",
-      value: "148",
+      value: "51",
       icon: Package,
       change: "+12% este mês",
       color: "text-success",
     },
     {
       title: "Itens Críticos",
-      value: "8",
+      value: "1",
       icon: AlertTriangle,
-      change: "Baixo estoque",
+      change: "Alerta ativo",
       color: "text-warning",
     },
     {
-      title: "Valor Total",
-      value: "R$ 47.2K",
+      title: "Capital em Estoque",
+      value: "R$ 10.2K",
       icon: TrendingUp,
       change: "+8.2% este mês",
       color: "text-success",
     },
     {
       title: "Categorias",
-      value: "12",
+      value: "5",
       icon: Archive,
       change: "Ativas",
       color: "text-info",
