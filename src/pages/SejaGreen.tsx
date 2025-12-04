@@ -9,7 +9,7 @@ import { useState } from "react";
 interface CollectionPoint {
   id: string;
   name: string;
-  type: "plastic" | "electronic" | "metal";
+  type: "plastic" | "electronic" | "scrap";
   location: string;
   coordinates: { x: number; y: number };
 }
@@ -25,23 +25,23 @@ interface Reward {
 const collectionPoints: CollectionPoint[] = [
   { id: "1", name: "Ponto Plásticos A", type: "plastic", location: "Pavilhão Principal", coordinates: { x: 25, y: 30 } },
   { id: "2", name: "Ponto Eletrônicos", type: "electronic", location: "Área Técnica", coordinates: { x: 60, y: 45 } },
-  { id: "3", name: "Ponto Metais A", type: "metal", location: "Box de Manutenção", coordinates: { x: 40, y: 70 } },
+  { id: "3", name: "Ponto Sucata A", type: "scrap", location: "Box de Manutenção", coordinates: { x: 40, y: 70 } },
   { id: "4", name: "Ponto Plásticos B", type: "plastic", location: "Entrada Sul", coordinates: { x: 75, y: 25 } },
-  { id: "5", name: "Ponto Metais B", type: "metal", location: "Área de Descarte", coordinates: { x: 20, y: 60 } },
+  { id: "5", name: "Ponto Sucata B", type: "scrap", location: "Área de Descarte", coordinates: { x: 20, y: 60 } },
   { id: "6", name: "Ponto Eletrônicos B", type: "electronic", location: "Laboratório", coordinates: { x: 85, y: 65 } },
 ];
 
 const rewards: Reward[] = [
-  { id: "1", name: "Snack Box", pointsCost: 10, description: "Uma caixa com diversos snacks", available: true },
-  { id: "2", name: "Camiseta SAE", pointsCost: 25, description: "Camiseta oficial do evento", available: true },
-  { id: "3", name: "Kit Ferramentas", pointsCost: 50, description: "Kit básico de ferramentas", available: true },
-  { id: "4", name: "Ingresso VIP", pointsCost: 100, description: "Acesso VIP às áreas restritas", available: false },
+  { id: "1", name: "Lata de Refri", pointsCost: 10, description: "Uma lata de refrigerante a sua escolha", available: true },
+  { id: "2", name: "Snack Box", pointsCost: 25, description: "Uma caixa com alguns snacks", available: true },
+  { id: "3", name: "Camiseta Fórmula SAE", pointsCost: 50, description: "Camiseta oficial do evento", available: true },
+  { id: "4", name: "Kit Ferramentas", pointsCost: 100, description: "Kit básico de ferramentas", available: false },
 ];
 
 const typeConfig = {
   plastic: { icon: Recycle, color: "bg-blue-500", label: "Plástico", bgLight: "bg-blue-500/20" },
   electronic: { icon: Cpu, color: "bg-amber-500", label: "Eletrônico", bgLight: "bg-amber-500/20" },
-  metal: { icon: Wrench, color: "bg-slate-500", label: "Metal", bgLight: "bg-slate-500/20" },
+  scrap: { icon: Wrench, color: "bg-slate-500", label: "Sucata", bgLight: "bg-slate-500/20" },
 };
 
 const SejaGreen = () => {
@@ -146,7 +146,7 @@ const SejaGreen = () => {
 
                   {/* Map labels */}
                   <div className="absolute top-4 left-4 text-xs text-muted-foreground font-medium">
-                    Arena Fórmula SAE Brasil
+                    Pontos de Coleta
                   </div>
 
                   {/* Collection points */}
@@ -195,7 +195,7 @@ const SejaGreen = () => {
                       <span className="text-xl font-bold text-primary">1</span>
                     </div>
                     <h4 className="font-medium text-foreground mb-1">Separe</h4>
-                    <p className="text-sm text-muted-foreground">Separe plásticos, eletrônicos e metais corretamente</p>
+                    <p className="text-sm text-muted-foreground">Separe plásticos, eletrônicos e sucata corretamente</p>
                   </div>
                   <div className="flex flex-col items-center text-center p-4 rounded-lg bg-muted/50">
                     <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
@@ -269,7 +269,7 @@ const SejaGreen = () => {
               <CardContent className="space-y-3">
                 {Object.entries(typeConfig).map(([type, config]) => {
                   const Icon = config.icon;
-                  const points = type === "electronic" ? 3 : type === "metal" ? 2 : 1;
+                  const points = type === "electronic" ? 3 : type === "scrap" ? 2 : 1;
                   return (
                     <div key={type} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
                       <div className="flex items-center gap-3">
