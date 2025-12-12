@@ -24,7 +24,7 @@ const Navigation = () => {
                 <Package className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">SAE Inventory</h1>
+                <h1 className="text-xl font-bold text-foreground">FSAE Tools</h1>
                 <p className="text-xs text-muted-foreground">Gestão de Estoque</p>
               </div>
             </div>
